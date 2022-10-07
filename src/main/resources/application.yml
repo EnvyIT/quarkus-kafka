@@ -1,4 +1,19 @@
+quarkus:
+  log:
+    level: INFO
+    console:
+      json:
+        date-format: dd.MM.yyyy-HH:mm:ss
+    file:
+      enable: true
+      level: WARN
+      json:
+        date-format: dd.MM.yyyy-HH:mm:ss
+      path: ./logs/quote-consumer-errors.log
+
 kafka:
+  group:
+    id: quote-consumer-group
   bootstrap:
     servers: localhost:9092
 
