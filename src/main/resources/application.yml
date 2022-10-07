@@ -1,0 +1,17 @@
+kafka:
+  bootstrap:
+    servers: localhost:9092
+
+mp:
+  messaging:
+    outgoing:
+      quote-out:
+        connector: smallrye-kafka
+        topic: quote-topic
+    incoming:
+      quote-in:
+        connector: smallrye-kafka
+        topic: quote-topic
+        auto:
+          offset:
+            reset: earliest
