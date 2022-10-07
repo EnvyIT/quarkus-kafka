@@ -4,6 +4,6 @@ target/
 
 logs/
 
-!.idea/runConfigurations
+!.idea/runConfigurations/
 !dev/kowl/config.yaml
 
