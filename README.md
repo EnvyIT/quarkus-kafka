@@ -8,4 +8,5 @@
 1. Execute `Run Application` and docker containers should be spinned up
 2. Open `http://localhost:8080/q/swagger-ui` for openapi documentation 
 3. Open `http://localhost:8081/` to access [Kowl](https://cloudhut.dev/) - the Kafka UI
+4. Run `Consumer Test` to see Kafka Companion and Testcontainers Kafka in action
 
