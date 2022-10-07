@@ -3,7 +3,7 @@ package com.envyit.demo.quote
 import java.math.BigDecimal
 import java.util.*
 
-data class Quote(val id: UUID, val price: BigDecimal) {
+data class Quote(val id: UUID = UUID.randomUUID(), val price: BigDecimal = BigDecimal.valueOf(RANDOM.nextLong())) {
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -26,6 +26,10 @@ data class Quote(val id: UUID, val price: BigDecimal) {
 
     override fun toString(): String {
         return "Quote(id=$id, price=$price)"
+    }
+
+    companion object {
+        val RANDOM = Random(System.currentTimeMillis())
     }
 
 }

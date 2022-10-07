@@ -15,7 +15,7 @@ class QuoteConsumer {
     }
 
     @Incoming("quote-in")
-    fun consume(quoteRequest: String) {
+    fun consume(quoteRequest: Quote) {
         logger.info("Received message for UUID: $quoteRequest")
     }
 
