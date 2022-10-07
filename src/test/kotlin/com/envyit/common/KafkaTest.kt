@@ -9,4 +9,4 @@ import javax.enterprise.inject.Stereotype
 @Stereotype
 @QuarkusTest
 @QuarkusTestResource(KafkaResource::class)
-annotation class KafkaTest()
+annotation class KafkaTest

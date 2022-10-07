@@ -2,6 +2,7 @@ package com.envyit
 
 import com.envyit.common.KafkaTest
 import com.envyit.common.KafkaClient
+import com.envyit.common.TEST_TOPIC
 import com.envyit.common.withSerializer
 import com.envyit.demo.quote.Quote
 import com.envyit.demo.quote.QuoteDeserializer
@@ -10,7 +11,6 @@ import org.apache.kafka.clients.producer.ProducerRecord
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import java.time.Duration
-
 
 @KafkaTest
 class QuoteConsumerTest {
@@ -23,11 +23,11 @@ class QuoteConsumerTest {
 
         kafka
             .produce(Quote::class.java)
-            .fromRecords(ProducerRecord(QuoteTestHelper.TEST_TOPIC, quotePayload))
+            .fromRecords(ProducerRecord(TEST_TOPIC, quotePayload))
         val consumer =
             kafka
                 .consume(Quote::class.java)
-                .fromTopics(QuoteTestHelper.TEST_TOPIC, Duration.ofSeconds(1))
+                .fromTopics(TEST_TOPIC, Duration.ofSeconds(1))
                 .awaitCompletion()
 
         assertEquals(consumer.first().value().id, quotePayload.id)
